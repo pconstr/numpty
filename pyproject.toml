@@ -1,0 +1,29 @@
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "numpty"
+description = "NumPy interface to a child process running in a headless pseudoterminal (pty)"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy"
+]
+authors = [
+  {name = "Carlos Guerreiro", email = "carlos@perceptiveconstructs.com"}
+]
+maintainers = [
+  {name = "Carlos Guerreiro", email = "carlos@perceptiveconstructs.com"}
+]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://codeberg.org/pconstr/numpty"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]

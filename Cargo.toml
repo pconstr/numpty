@@ -1,0 +1,36 @@
+[package]
+name = "numpty"
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.74"
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+avt = "0.15.0"
+nix = { version = "0.28.0", features = ["term", "process", "fs", "signal"] }
+serde_json = "1.0.117"
+mio = { version = "0.8.11", features = ["os-poll", "os-ext"] }
+anyhow = "1.0.81"
+clap = { version = "4.5.4", features = ["derive"] }
+serde = { version = "1.0.207", features = ["derive"] }
+tokio = { version = "1.43.0", features = ["full"] }
+tokio-util = { version = "0.7.13" }
+axum = { version = "0.7.5", default-features = false, features = ["http1", "ws", "query"] }
+tokio-stream = { version = "0.1.15", features = ["sync"] }
+futures-util = "0.3.30"
+futures = "0.3.31"
+rgb = "0.8.37"
+rust-embed = "8.4.0"
+mime_guess = "2.0.5"
+ndarray = "0.16.1"
+numpy = "0.23.0"
+pyo3 = { version="0.23.3", features=["experimental-async"] }
+
+[profile.release]
+strip = true
